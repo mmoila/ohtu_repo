@@ -16,12 +16,12 @@ class Ostoskori:
     def hinta(self):
         if len(self._ostokset) == 0:
             return 0
-        return sum(map(lambda o: o, self._ostokset))
+        return sum(map(lambda o: o.hinta(), self._ostokset))
         # kertoo korissa olevien ostosten yhteenlasketun hinnan
 
     def lisaa_tuote(self, lisattava: Tuote):
-        # lisää tuotteen
-        pass
+        tuote = Ostos(lisattava)
+        self._ostokset.append(tuote)
 
     def poista_tuote(self, poistettava: Tuote):
         # poistaa tuotteen

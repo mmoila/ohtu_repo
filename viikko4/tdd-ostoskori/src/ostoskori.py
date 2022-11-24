@@ -28,7 +28,6 @@ class Ostoskori:
             self._ostokset.append(Ostos(lisattava))
 
     def poista_tuote(self, poistettava: Tuote):
-        # poistaa tuotteen
         pass
 
     def tyhjenna(self):

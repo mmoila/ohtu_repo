@@ -28,6 +28,17 @@ class Not:
         return not self._matcher.test(player)
 
 
+class Or:
+    def __init__(self, *matchers):
+        self.matchers = matchers
+
+    def test(self, player):
+        for matcher in self.matchers:
+            if matcher.test(player):
+                return True
+        return False
+
+
 class HasFewerThan:
     def __init__(self, value, attr):
         self._value = value
